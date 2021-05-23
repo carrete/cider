@@ -574,7 +574,7 @@ one used."
                       (apply-partially #'format "%s")
                       (cider-jack-in-normalized-nrepl-middlewares)
                       ","))
-         (main-opts (format "\"-m\" \"nrepl.cmdline\" \"--middleware\" \"[%s]\"" middleware)))
+         (main-opts (format "\"-m\" \"nrepl.cmdline\" \"--bind\" \"0.0.0.0\" \"--host\" \"localhost\" \"--port\" \"5309\" \"--middleware\" \"[%s]\"" middleware)))
     (format "%s-Sdeps '{:deps {%s} :aliases {:cider/nrepl {:main-opts [%s]}}}' -M%s:cider/nrepl"
             (if global-options (format "%s " global-options) "")
             deps-string
